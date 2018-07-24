@@ -6,13 +6,17 @@ class Person
 :weight, :handed, :complexion, :t_shirt_size,
 :wrist_size, :glove_size, :pant_length, :pant_width
 
+#   def initialize(attributes=nil)
+# # binding.pry
+#     if attributes
+#       attributes.each do |key, value|
+#         self.send("#{key}=", value)
+#       end
+#     end
+#   end
+
   def initialize(attributes=nil)
-# binding.pry
-    if attributes
-      attributes.each do |key, value|
-        self.send("#{key}=", value)
-      end
-    end
+    attributes ? attributes.each {|k,v| self.send("#{k}=", v)} : attributes
   end
 
 end
